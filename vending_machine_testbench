@@ -1,0 +1,23 @@
+module vending_machine_tb;
+  reg clk;
+  reg reset;
+  reg [1:0] in;
+  wire out;
+  wire [1:0] change;
+  vending_machine uut(.clk(clk),
+                      .reset(reset),
+                      .in(in),
+                      .out(out),
+                      .change(change));
+  initial begin
+    reset=0;
+    clk=0;
+    #6 reset=1;
+    in=1;
+    #11 in=1;
+    #16 in=1;
+    #25 $finish;
+  end
+  always #5 clk= ~clk;
+endmodule
+  
