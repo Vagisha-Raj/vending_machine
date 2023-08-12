@@ -13,9 +13,9 @@ module vending_machine_tb;
     reset=0;
     clk=0;
     #6 reset=1;
-    in=1;
-    #11 in=1;
-    #16 in=1;
+    in=10;
+    #11 in=01;
+    #16 in=10;
     #25 $finish;
   end
   always #5 clk= ~clk;
